@@ -50,7 +50,7 @@ for idx_exp in range(300):
     # guess.dtype = model.expparams_dtype
 
 
-    optimized_exp = optimize(guess, objective_fun, model, updater)
+    optimized_exp = optimize(guess, objective_fun_inf_gain, model, updater)
 
     experiment = optimized_exp['x']
 
