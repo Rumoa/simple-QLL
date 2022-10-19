@@ -14,29 +14,47 @@ from optimization import *
 from sklearn.metrics import mean_squared_error
 
 
-def run_case_n_times(true_values, n_shots, n_repeat=1):
-    all_data = [run_case(true_values, n_shots) for _ in n_repeat]
+def MSE(a, b, sum_over_params=True):
+    if sum_over_params:
+        return np.sum((a - b) ** 2, axis=1)
+    else:
+        return (a - b) ** 2
+
+
+def compute_covariance_norm(array):
+    return list(map(np.linalg.norm, array))
+
+
+def run_case_n_times(
+    true_values, n_shots, n_repeat=1, write_in_disk=None, filename=None
+):
+    all_data = [run_case(true_values, n_shots) for _ in range(n_repeat)]
+
+    if write_in_disk:
+        joblib.dump(all_data, filename, compress=5)
     return all_data
 
 
 def compute_statistic(dictionary, key, statistic="mean"):
     dictionary_copy = dictionary.copy()
     if statistic == "mean":
-        dictionary_copy[key] = np.mean(dictionary[key], axis=0)
+        dictionary_copy[key + "_mean"] = np.mean(dictionary[key], axis=0)
         return dictionary_copy
     if statistic == "median":
-        dictionary_copy[key] = np.median(dictionary[key], axis=0)
+        dictionary_copy[key + "_median"] = np.median(dictionary[key], axis=0)
         return dictionary_copy
 
 
 def run_case(true_values, n_shots, write_in_disk=None, filename=None):
+
     model = simple_precession_with_noise()
     prior = qi.UniformDistribution([[0, 0], [0, 0.7]])
-    updater = qi.SMCUpdater(model, 150, prior)
+    no_particles = 150
+    updater = qi.SMCUpdater(model, no_particles, prior)
     est_omegas = []
     est_cov = []
     experiment_times = []
-
+    iter_array = np.arange(1, n_shots + 1, 1)
     for _ in range(n_shots):
         guess = generate_guesses()
         optimized_exp = optimize(guess, objective_fun_var_t, model, updater)
@@ -66,16 +84,20 @@ def run_case(true_values, n_shots, write_in_disk=None, filename=None):
         print(f"Difference squared: {(est_omegas[-1] - true_values) ** 2}")
 
     result_dict = {
-        "True values": true_values,
+        "True parameters": true_values,
+        "Number of particles": no_particles,
         "Number of shots": n_shots,
         "Estimated parameters": est_omegas,
-        "Estimate covariance": est_cov,
+        "Estimated covariance": est_cov,
         "Experimental times": experiment_times,
+        "Iterations": iter_array,
     }
-    # if write_in_disk:
+    if write_in_disk:
+        joblib.dump(result_dict, filename, compress=5)
     #     write_case_hdf5(result_dict, filename )
 
     return result_dict
+
 
 # def write_case_hdf5(dictionary, filename):
 #     with h5py.File("filename.hdf5", "w") as data_file:
