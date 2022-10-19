@@ -11,3 +11,5 @@ run_experiments.py
 __pycache__/*
 
 build/*
+data_analysis.ipynb
+

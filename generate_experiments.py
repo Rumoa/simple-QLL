@@ -35,14 +35,15 @@ def run_case_n_times(
     return all_data
 
 
-def compute_statistic(dictionary, key, statistic="mean"):
-    dictionary_copy = dictionary.copy()
+def generate_statistic_over_runs(lista, key,  statistic="mean"):
+    zeros = np.zeros([len(lista), len(lista[0][key])])
+    for i in range(len(lista)):
+        zeros[i,:] = generate_experiments.compute_covariance_norm(lista[i][key] )
+
     if statistic == "mean":
-        dictionary_copy[key + "_mean"] = np.mean(dictionary[key], axis=0)
-        return dictionary_copy
-    if statistic == "median":
-        dictionary_copy[key + "_median"] = np.median(dictionary[key], axis=0)
-        return dictionary_copy
+        return np.mean(zeros, axis=0) 
+    if statistic =="median":
+        return np.median(zeros, axis=0)    
 
 
 def run_case(true_values, n_shots, write_in_disk=None, filename=None):
