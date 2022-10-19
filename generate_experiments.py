@@ -67,10 +67,10 @@ def run_case(true_values, n_shots, write_in_disk=None, filename=None):
         exp_after = experiment
         exp_after.dtype = model.expparams_dtype
 
-        print(f"Inf gain non-opt t {updater.expected_information_gain(exp_before)}.")
-        print(f"Inf gain after opt {updater.expected_information_gain(exp_after)}.")
-
-        print(f"Experimental time {experiment}")
+        # print(f"Inf gain non-opt t {updater.expected_information_gain(exp_before)}.")
+        # print(f"Inf gain after opt {updater.expected_information_gain(exp_after)}.")
+        #
+        # print(f"Experimental time {experiment}")
 
         datum = model.simulate_experiment(true_values, experiment)
         updater.update(datum, experiment)
@@ -79,8 +79,8 @@ def run_case(true_values, n_shots, write_in_disk=None, filename=None):
         est_cov.append(updater.est_covariance_mtx())
         experiment_times.append(experiment)
 
-        print(f"True parameters: {true_values}")
-        print(f"Estimated parameters: {est_omegas[-1]}")
+        # print(f"True parameters: {true_values}")
+        # print(f"Estimated parameters: {est_omegas[-1]}")
         print(f"Difference squared: {(est_omegas[-1] - true_values) ** 2}")
         print(f"Experiment {i+1}/{n_shots} finished.")
     result_dict = {

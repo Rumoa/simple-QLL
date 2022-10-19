@@ -8,6 +8,10 @@ import joblib
 from generate_experiments import run_case, run_case_n_times, MSE
 from datetime import datetime
 
+import multiprocessing
+
+print(multiprocessing.cpu_count())
+
 rng = np.random.default_rng(seed=2)
 
 number_of_cases = 2

@@ -3,3 +3,9 @@ Data/*
 example_script.sh
 
 .idea/
+*.so
+*.log
+
+__pycache__/*
+
+build/*
