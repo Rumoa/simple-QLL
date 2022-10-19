@@ -10,9 +10,9 @@ from datetime import datetime
 
 rng = np.random.default_rng(seed=2)
 
-number_of_cases = 1
-number_of_shots = 2
-n_repeat = 2
+number_of_cases = 2
+number_of_shots = 100
+n_repeat = 10
 
 true_values_list = [
     np.array([[0, rng.uniform(0, 0.5, size=1)[0]]]) for _ in range(number_of_cases)
