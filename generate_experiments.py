@@ -1,4 +1,4 @@
-from nbformat import write
+# from nbformat import write
 import qutip as qu
 import numpy as np
 import matplotlib.pyplot as plt
@@ -55,7 +55,7 @@ def run_case(true_values, n_shots, write_in_disk=None, filename=None):
     est_cov = []
     experiment_times = []
     iter_array = np.arange(1, n_shots + 1, 1)
-    for _ in range(n_shots):
+    for i in range(n_shots):
         guess = generate_guesses()
         optimized_exp = optimize(guess, objective_fun_var_t, model, updater)
 
@@ -82,7 +82,7 @@ def run_case(true_values, n_shots, write_in_disk=None, filename=None):
         print(f"True parameters: {true_values}")
         print(f"Estimated parameters: {est_omegas[-1]}")
         print(f"Difference squared: {(est_omegas[-1] - true_values) ** 2}")
-
+        print(f"Experiment {i+1}/{n_shots} finished.")
     result_dict = {
         "True parameters": true_values,
         "Number of particles": no_particles,
