@@ -1,3 +1,5 @@
 *.job
 Data/*
 example_script.sh
+
+.idea/
