@@ -35,7 +35,7 @@ def run_case_n_times(
     return all_data
 
 
-def generate_statistic_over_runs(lista, key, statistic="mean"):
+def compute_covariance_norm_over_runs(lista, key, statistic="mean"):
     zeros = np.zeros([len(lista), len(lista[0][key])])
     for i in range(len(lista)):
         zeros[i, :] = compute_covariance_norm(lista[i][key])
@@ -44,6 +44,8 @@ def generate_statistic_over_runs(lista, key, statistic="mean"):
         return np.mean(zeros, axis=0)
     if statistic == "median":
         return np.median(zeros, axis=0)
+    if statistic == "std":
+        return np.std(zeros, axis=0)    
 
 
 def run_case(true_values, n_shots, write_in_disk=None, filename=None):

@@ -13,3 +13,7 @@ __pycache__/*
 build/*
 data_analysis.ipynb
 
+prueba.pdf
+
+*.pyc
+
