@@ -13,6 +13,8 @@ from optimization import *
 
 from sklearn.metrics import mean_squared_error
 
+from custom_updater import adaptive_SMC
+
 
 def MSE(a, b, sum_over_params=True):
     if sum_over_params:
@@ -45,15 +47,36 @@ def compute_covariance_norm_over_runs(lista, key, statistic="mean"):
     if statistic == "median":
         return np.median(zeros, axis=0)
     if statistic == "std":
-        return np.std(zeros, axis=0)    
+        return np.std(zeros, axis=0)
+
+
+def compute_mse_run(data):
+    return MSE(
+        data["Estimated parameters"], data["True parameters"], sum_over_params=True
+    )
+
+
+def compute_mse_over_all_runs(lista, statistic="mean"):
+    all_mse = list(map(compute_mse_run, lista))
+
+    zeros = np.zeros([len(all_mse), len(all_mse[0])])
+    for i in range(len(lista)):
+        zeros[i, :] = all_mse[i]
+
+    if statistic == "mean":
+        return np.mean(zeros, axis=0)
+    if statistic == "median":
+        return np.median(zeros, axis=0)
+    if statistic == "std":
+        return np.std(zeros, axis=0)
 
 
 def run_case(true_values, n_shots, write_in_disk=None, filename=None):
 
     model = simple_precession_with_noise()
-    prior = qi.UniformDistribution([[0, 0], [0, 0.7]])
+    prior = qi.UniformDistribution([[0, 0], [0, 0.5]])
     no_particles = 150
-    updater = qi.SMCUpdater(model, no_particles, prior)
+    updater = adaptive_SMC(model, no_particles, prior, update_rate=0.4)
     est_omegas = []
     est_cov = []
     experiment_times = []

@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "name": "solve_lindblad",
+        "name": "solve_lindblad_file",
         "sources": [
-            "solve_lindblad.pyx"
+            "solve_lindblad_file.pyx"
         ]
     },
-    "module_name": "solve_lindblad"
+    "module_name": "solve_lindblad_file"
 }
 END: Cython Metadata */
 
@@ -750,8 +750,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__solve_lindblad
-#define __PYX_HAVE_API__solve_lindblad
+#define __PYX_HAVE__solve_lindblad_file
+#define __PYX_HAVE_API__solve_lindblad_file
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -962,7 +962,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "solve_lindblad.pyx",
+  "solve_lindblad_file.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -1306,12 +1306,12 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'solve_lindblad' */
-#define __Pyx_MODULE_NAME "solve_lindblad"
-extern int __pyx_module_is_main_solve_lindblad;
-int __pyx_module_is_main_solve_lindblad = 0;
+/* Module declarations from 'solve_lindblad_file' */
+#define __Pyx_MODULE_NAME "solve_lindblad_file"
+extern int __pyx_module_is_main_solve_lindblad_file;
+int __pyx_module_is_main_solve_lindblad_file = 0;
 
-/* Implementation of 'solve_lindblad' */
+/* Implementation of 'solve_lindblad_file' */
 static const char __pyx_k_t[] = "t";
 static const char __pyx_k_H0[] = "H0";
 static const char __pyx_k_np[] = "np";
@@ -1341,9 +1341,9 @@ static const char __pyx_k_evolve_dm[] = "evolve_dm";
 static const char __pyx_k_no_qubits[] = "no_qubits";
 static const char __pyx_k_operators[] = "operators";
 static const char __pyx_k_liouvillian[] = "liouvillian";
-static const char __pyx_k_solve_lindblad[] = "solve_lindblad";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_solve_lindblad_pyx[] = "solve_lindblad.pyx";
+static const char __pyx_k_solve_lindblad_file[] = "solve_lindblad_file";
+static const char __pyx_k_solve_lindblad_file_pyx[] = "solve_lindblad_file.pyx";
 static PyObject *__pyx_n_s_H0;
 static PyObject *__pyx_n_s_Qobj;
 static PyObject *__pyx_n_s_c_ops;
@@ -1371,12 +1371,12 @@ static PyObject *__pyx_n_s_rho_evol;
 static PyObject *__pyx_n_s_rho_sup;
 static PyObject *__pyx_n_s_rmatmul;
 static PyObject *__pyx_n_s_scipy;
-static PyObject *__pyx_n_s_solve_lindblad;
-static PyObject *__pyx_kp_s_solve_lindblad_pyx;
+static PyObject *__pyx_n_s_solve_lindblad_file;
+static PyObject *__pyx_kp_s_solve_lindblad_file_pyx;
 static PyObject *__pyx_n_s_t;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_to_super;
-static PyObject *__pyx_pf_14solve_lindblad_evolve_dm(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_rho0, PyObject *__pyx_v_H0, PyObject *__pyx_v_operators, PyObject *__pyx_v_t, PyObject *__pyx_v_no_qubits); /* proto */
+static PyObject *__pyx_pf_19solve_lindblad_file_evolve_dm(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_rho0, PyObject *__pyx_v_H0, PyObject *__pyx_v_operators, PyObject *__pyx_v_t, PyObject *__pyx_v_no_qubits); /* proto */
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_2;
@@ -1387,7 +1387,7 @@ static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_codeobj__4;
 /* Late includes */
 
-/* "solve_lindblad.pyx":6
+/* "solve_lindblad_file.pyx":6
  * 
  * 
  * def evolve_dm(rho0, H0, operators, t, no_qubits=1):             # <<<<<<<<<<<<<<
@@ -1396,9 +1396,9 @@ static PyObject *__pyx_codeobj__4;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_14solve_lindblad_1evolve_dm(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_14solve_lindblad_1evolve_dm = {"evolve_dm", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_14solve_lindblad_1evolve_dm, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_14solve_lindblad_1evolve_dm(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_19solve_lindblad_file_1evolve_dm(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_19solve_lindblad_file_1evolve_dm = {"evolve_dm", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_19solve_lindblad_file_1evolve_dm, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_19solve_lindblad_file_1evolve_dm(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_rho0 = 0;
   PyObject *__pyx_v_H0 = 0;
   PyObject *__pyx_v_operators = 0;
@@ -1486,18 +1486,18 @@ static PyObject *__pyx_pw_14solve_lindblad_1evolve_dm(PyObject *__pyx_self, PyOb
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("evolve_dm", 0, 4, 5, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 6, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("solve_lindblad.evolve_dm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("solve_lindblad_file.evolve_dm", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_14solve_lindblad_evolve_dm(__pyx_self, __pyx_v_rho0, __pyx_v_H0, __pyx_v_operators, __pyx_v_t, __pyx_v_no_qubits);
+  __pyx_r = __pyx_pf_19solve_lindblad_file_evolve_dm(__pyx_self, __pyx_v_rho0, __pyx_v_H0, __pyx_v_operators, __pyx_v_t, __pyx_v_no_qubits);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_14solve_lindblad_evolve_dm(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_rho0, PyObject *__pyx_v_H0, PyObject *__pyx_v_operators, PyObject *__pyx_v_t, PyObject *__pyx_v_no_qubits) {
+static PyObject *__pyx_pf_19solve_lindblad_file_evolve_dm(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_rho0, PyObject *__pyx_v_H0, PyObject *__pyx_v_operators, PyObject *__pyx_v_t, PyObject *__pyx_v_no_qubits) {
   PyObject *__pyx_v_liouvillian = NULL;
   PyObject *__pyx_v_rho_sup = NULL;
   PyObject *__pyx_v_rho_evol = NULL;
@@ -1515,7 +1515,7 @@ static PyObject *__pyx_pf_14solve_lindblad_evolve_dm(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("evolve_dm", 0);
 
-  /* "solve_lindblad.pyx":7
+  /* "solve_lindblad_file.pyx":7
  * 
  * def evolve_dm(rho0, H0, operators, t, no_qubits=1):
  *     liouvillian = qu.liouvillian(H0, c_ops=operators)             # <<<<<<<<<<<<<<
@@ -1543,7 +1543,7 @@ static PyObject *__pyx_pf_14solve_lindblad_evolve_dm(CYTHON_UNUSED PyObject *__p
   __pyx_v_liouvillian = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "solve_lindblad.pyx":8
+  /* "solve_lindblad_file.pyx":8
  * def evolve_dm(rho0, H0, operators, t, no_qubits=1):
  *     liouvillian = qu.liouvillian(H0, c_ops=operators)
  *     rho_sup = qu.to_super(rho0)             # <<<<<<<<<<<<<<
@@ -1573,7 +1573,7 @@ static PyObject *__pyx_pf_14solve_lindblad_evolve_dm(CYTHON_UNUSED PyObject *__p
   __pyx_v_rho_sup = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "solve_lindblad.pyx":9
+  /* "solve_lindblad_file.pyx":9
  *     liouvillian = qu.liouvillian(H0, c_ops=operators)
  *     rho_sup = qu.to_super(rho0)
  *     rho_evol = scipy.linalg.expm(liouvillian.full()*t)@rho_sup.full()             # <<<<<<<<<<<<<<
@@ -1648,7 +1648,7 @@ static PyObject *__pyx_pf_14solve_lindblad_evolve_dm(CYTHON_UNUSED PyObject *__p
   __pyx_v_rho_evol = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "solve_lindblad.pyx":10
+  /* "solve_lindblad_file.pyx":10
  *     rho_sup = qu.to_super(rho0)
  *     rho_evol = scipy.linalg.expm(liouvillian.full()*t)@rho_sup.full()
  *     dm_evol = rho_evol[:, 0].reshape(-1, 2**no_qubits)             # <<<<<<<<<<<<<<
@@ -1712,7 +1712,7 @@ static PyObject *__pyx_pf_14solve_lindblad_evolve_dm(CYTHON_UNUSED PyObject *__p
   __pyx_v_dm_evol = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "solve_lindblad.pyx":11
+  /* "solve_lindblad_file.pyx":11
  *     rho_evol = scipy.linalg.expm(liouvillian.full()*t)@rho_sup.full()
  *     dm_evol = rho_evol[:, 0].reshape(-1, 2**no_qubits)
  *     dm_evol = qu.Qobj(dm_evol)             # <<<<<<<<<<<<<<
@@ -1742,7 +1742,7 @@ static PyObject *__pyx_pf_14solve_lindblad_evolve_dm(CYTHON_UNUSED PyObject *__p
   __Pyx_DECREF_SET(__pyx_v_dm_evol, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "solve_lindblad.pyx":12
+  /* "solve_lindblad_file.pyx":12
  *     dm_evol = rho_evol[:, 0].reshape(-1, 2**no_qubits)
  *     dm_evol = qu.Qobj(dm_evol)
  *     return dm_evol             # <<<<<<<<<<<<<<
@@ -1754,7 +1754,7 @@ static PyObject *__pyx_pf_14solve_lindblad_evolve_dm(CYTHON_UNUSED PyObject *__p
   __pyx_r = __pyx_v_dm_evol;
   goto __pyx_L0;
 
-  /* "solve_lindblad.pyx":6
+  /* "solve_lindblad_file.pyx":6
  * 
  * 
  * def evolve_dm(rho0, H0, operators, t, no_qubits=1):             # <<<<<<<<<<<<<<
@@ -1769,7 +1769,7 @@ static PyObject *__pyx_pf_14solve_lindblad_evolve_dm(CYTHON_UNUSED PyObject *__p
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("solve_lindblad.evolve_dm", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("solve_lindblad_file.evolve_dm", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_liouvillian);
@@ -1788,17 +1788,17 @@ static PyMethodDef __pyx_methods[] = {
 #if PY_MAJOR_VERSION >= 3
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
-static int __pyx_pymod_exec_solve_lindblad(PyObject* module); /*proto*/
+static int __pyx_pymod_exec_solve_lindblad_file(PyObject* module); /*proto*/
 static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {Py_mod_create, (void*)__pyx_pymod_create},
-  {Py_mod_exec, (void*)__pyx_pymod_exec_solve_lindblad},
+  {Py_mod_exec, (void*)__pyx_pymod_exec_solve_lindblad_file},
   {0, NULL}
 };
 #endif
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
-    "solve_lindblad",
+    "solve_lindblad_file",
     0, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
@@ -1854,8 +1854,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_rho_sup, __pyx_k_rho_sup, sizeof(__pyx_k_rho_sup), 0, 0, 1, 1},
   {&__pyx_n_s_rmatmul, __pyx_k_rmatmul, sizeof(__pyx_k_rmatmul), 0, 0, 1, 1},
   {&__pyx_n_s_scipy, __pyx_k_scipy, sizeof(__pyx_k_scipy), 0, 0, 1, 1},
-  {&__pyx_n_s_solve_lindblad, __pyx_k_solve_lindblad, sizeof(__pyx_k_solve_lindblad), 0, 0, 1, 1},
-  {&__pyx_kp_s_solve_lindblad_pyx, __pyx_k_solve_lindblad_pyx, sizeof(__pyx_k_solve_lindblad_pyx), 0, 0, 1, 0},
+  {&__pyx_n_s_solve_lindblad_file, __pyx_k_solve_lindblad_file, sizeof(__pyx_k_solve_lindblad_file), 0, 0, 1, 1},
+  {&__pyx_kp_s_solve_lindblad_file_pyx, __pyx_k_solve_lindblad_file_pyx, sizeof(__pyx_k_solve_lindblad_file_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_t, __pyx_k_t, sizeof(__pyx_k_t), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_to_super, __pyx_k_to_super, sizeof(__pyx_k_to_super), 0, 0, 1, 1},
@@ -1869,7 +1869,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "solve_lindblad.pyx":10
+  /* "solve_lindblad_file.pyx":10
  *     rho_sup = qu.to_super(rho0)
  *     rho_evol = scipy.linalg.expm(liouvillian.full()*t)@rho_sup.full()
  *     dm_evol = rho_evol[:, 0].reshape(-1, 2**no_qubits)             # <<<<<<<<<<<<<<
@@ -1883,7 +1883,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "solve_lindblad.pyx":6
+  /* "solve_lindblad_file.pyx":6
  * 
  * 
  * def evolve_dm(rho0, H0, operators, t, no_qubits=1):             # <<<<<<<<<<<<<<
@@ -1893,7 +1893,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__3 = PyTuple_Pack(9, __pyx_n_s_rho0, __pyx_n_s_H0, __pyx_n_s_operators, __pyx_n_s_t, __pyx_n_s_no_qubits, __pyx_n_s_liouvillian, __pyx_n_s_rho_sup, __pyx_n_s_rho_evol, __pyx_n_s_dm_evol); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(5, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_solve_lindblad_pyx, __pyx_n_s_evolve_dm, 6, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(5, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_solve_lindblad_file_pyx, __pyx_n_s_evolve_dm, 6, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -1995,11 +1995,11 @@ static int __Pyx_modinit_function_import_code(void) {
 
 
 #if PY_MAJOR_VERSION < 3
-__Pyx_PyMODINIT_FUNC initsolve_lindblad(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC initsolve_lindblad(void)
+__Pyx_PyMODINIT_FUNC initsolve_lindblad_file(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC initsolve_lindblad_file(void)
 #else
-__Pyx_PyMODINIT_FUNC PyInit_solve_lindblad(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC PyInit_solve_lindblad(void)
+__Pyx_PyMODINIT_FUNC PyInit_solve_lindblad_file(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit_solve_lindblad_file(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);
@@ -2066,7 +2066,7 @@ bad:
 }
 
 
-static CYTHON_SMALL_CODE int __pyx_pymod_exec_solve_lindblad(PyObject *__pyx_pyinit_module)
+static CYTHON_SMALL_CODE int __pyx_pymod_exec_solve_lindblad_file(PyObject *__pyx_pyinit_module)
 #endif
 #endif
 {
@@ -2078,7 +2078,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_solve_lindblad(PyObject *__pyx_pyi
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m) {
     if (__pyx_m == __pyx_pyinit_module) return 0;
-    PyErr_SetString(PyExc_RuntimeError, "Module 'solve_lindblad' has already been imported. Re-initialisation is not supported.");
+    PyErr_SetString(PyExc_RuntimeError, "Module 'solve_lindblad_file' has already been imported. Re-initialisation is not supported.");
     return -1;
   }
   #elif PY_MAJOR_VERSION >= 3
@@ -2093,7 +2093,7 @@ if (!__Pyx_RefNanny) {
       Py_FatalError("failed to import 'refnanny' module");
 }
 #endif
-  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_solve_lindblad(void)", 0);
+  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_solve_lindblad_file(void)", 0);
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #ifdef __Pxy_PyFrame_Initialize_Offsets
   __Pxy_PyFrame_Initialize_Offsets();
@@ -2130,7 +2130,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("solve_lindblad", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("solve_lindblad_file", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -2148,14 +2148,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_solve_lindblad) {
+  if (__pyx_module_is_main_solve_lindblad_file) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "solve_lindblad")) {
-      if (unlikely(PyDict_SetItemString(modules, "solve_lindblad", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "solve_lindblad_file")) {
+      if (unlikely(PyDict_SetItemString(modules, "solve_lindblad_file", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2176,7 +2176,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "solve_lindblad.pyx":1
+  /* "solve_lindblad_file.pyx":1
  * import qutip as qu             # <<<<<<<<<<<<<<
  * import numpy as np
  * import scipy
@@ -2186,7 +2186,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_qu, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "solve_lindblad.pyx":2
+  /* "solve_lindblad_file.pyx":2
  * import qutip as qu
  * import numpy as np             # <<<<<<<<<<<<<<
  * import scipy
@@ -2197,7 +2197,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "solve_lindblad.pyx":3
+  /* "solve_lindblad_file.pyx":3
  * import qutip as qu
  * import numpy as np
  * import scipy             # <<<<<<<<<<<<<<
@@ -2209,19 +2209,19 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_scipy, __pyx_t_1) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "solve_lindblad.pyx":6
+  /* "solve_lindblad_file.pyx":6
  * 
  * 
  * def evolve_dm(rho0, H0, operators, t, no_qubits=1):             # <<<<<<<<<<<<<<
  *     liouvillian = qu.liouvillian(H0, c_ops=operators)
  *     rho_sup = qu.to_super(rho0)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_14solve_lindblad_1evolve_dm, NULL, __pyx_n_s_solve_lindblad); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19solve_lindblad_file_1evolve_dm, NULL, __pyx_n_s_solve_lindblad_file); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_evolve_dm, __pyx_t_1) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "solve_lindblad.pyx":1
+  /* "solve_lindblad_file.pyx":1
  * import qutip as qu             # <<<<<<<<<<<<<<
  * import numpy as np
  * import scipy
@@ -2238,11 +2238,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init solve_lindblad", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init solve_lindblad_file", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init solve_lindblad");
+    PyErr_SetString(PyExc_ImportError, "init solve_lindblad_file");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
