@@ -1,19 +1,14 @@
 *.job
 Data/*
 example_script.sh
-
 run_experiments.py
-
 .idea/
 *.so
 *.log
-
 __pycache__/*
-
 build/*
 data_analysis.ipynb
-
 prueba.pdf
-
 *.pyc
 
+explorar.py
