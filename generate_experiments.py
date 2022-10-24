@@ -27,16 +27,6 @@ def compute_covariance_norm(array):
     return list(map(np.linalg.norm, array))
 
 
-def run_case_n_times(
-    true_values, n_shots, n_repeat=1, write_in_disk=None, filename=None
-):
-    all_data = [run_case(true_values, n_shots) for _ in range(n_repeat)]
-
-    if write_in_disk:
-        joblib.dump(all_data, filename, compress=5)
-    return all_data
-
-
 def compute_covariance_norm_over_runs(lista, key, statistic="mean"):
     zeros = np.zeros([len(lista), len(lista[0][key])])
     for i in range(len(lista)):
@@ -71,12 +61,33 @@ def compute_mse_over_all_runs(lista, statistic="mean"):
         return np.std(zeros, axis=0)
 
 
-def run_case(true_values, n_shots, write_in_disk=None, filename=None):
+def run_case_n_times(
+    true_values, n_shots, n_repeat=1, write_in_disk=None, filename=None, **kwargs
+):
+    all_data = [run_case(true_values, n_shots, **kwargs) for _ in range(n_repeat)]
+
+    if write_in_disk:
+        joblib.dump(all_data, filename, compress=5)
+    return all_data
+
+
+def run_case(
+    true_values,
+    n_shots,
+    SMC_fun="default",
+    write_in_disk=None,
+    filename=None,
+    no_particles=150,
+    **kwargs,
+):
 
     model = simple_precession_with_noise()
     prior = qi.UniformDistribution([[0, 0], [0, 0.5]])
-    no_particles = 150
-    updater = adaptive_SMC(model, no_particles, prior, update_rate=0.4)
+    no_particles = no_particles
+    if SMC_fun == "default":
+        updater = qi.SMCUpdater(model, no_particles, prior)
+    if SMC_fun == "slower":
+        updater = adaptive_SMC(model, no_particles, prior, **kwargs)
     est_omegas = []
     est_cov = []
     experiment_times = []

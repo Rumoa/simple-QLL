@@ -1,0 +1,28 @@
+[
+    {
+        "n_shots": 500,
+        "n_repeat": 10,
+        "no_particles": 150,
+        "SMC_fun": "default"
+    },
+    {
+        "n_shots": 500,
+        "n_repeat": 10,
+        "no_particles": 150,
+        "SMC_fun": "slower",
+        "update_rate": 0.4
+    },
+    {
+        "n_shots": 500,
+        "n_repeat": 10,
+        "no_particles": 500,
+        "SMC_fun": "default"
+    },
+    {
+        "n_shots": 500,
+        "n_repeat": 10,
+        "no_particles": 500,
+        "SMC_fun": "slower",
+        "update_rate": 0.4
+    }
+]
