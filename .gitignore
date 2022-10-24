@@ -1,7 +1,7 @@
 *.job
 Data/*
 example_script.sh
-run_experiments.py
+#run_experiments.py
 .idea/
 *.so
 *.log
