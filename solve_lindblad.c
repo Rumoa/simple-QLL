@@ -1747,7 +1747,6 @@ static PyObject *__pyx_pf_14solve_lindblad_evolve_dm(CYTHON_UNUSED PyObject *__p
  *     dm_evol = qu.Qobj(dm_evol)
  *     return dm_evol             # <<<<<<<<<<<<<<
  * 
- * 
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_dm_evol);

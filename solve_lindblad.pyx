@@ -11,6 +11,3 @@ def evolve_dm(rho0, H0, operators, t, no_qubits=1):
     dm_evol = qu.Qobj(dm_evol)
     return dm_evol
 
-
-
-    
