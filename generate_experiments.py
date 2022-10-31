@@ -91,18 +91,23 @@ def run_case(
     est_omegas = []
     est_cov = []
     experiment_times = []
+
     iter_array = np.arange(1, n_shots + 1, 1)
     for i in range(n_shots):
         guess = generate_guesses()
-        optimized_exp = optimize(guess, objective_fun_var_t, model, updater)
+        print("Begin of optimization")
+        optimized_exp = optimize(guess, fisher_inf_matrix,  updater)
+        print("End of optimization")
 
         experiment = optimized_exp["x"]
-
-        exp_before = guess
-        exp_before.dtype = model.expparams_dtype
-
-        exp_after = experiment
-        exp_after.dtype = model.expparams_dtype
+        # experiment = guess.copy()
+        # experiment[0] = np.array(optimized_exp[0][0])
+        print(f"Time: {experiment}")
+        # exp_before = guess
+        # exp_before.dtype = model.expparams_dtype
+        experiment.dtype = model.expparams_dtype
+        # exp_after = experiment
+        # exp_after.dtype = model.expparams_dtype
 
         # print(f"Inf gain non-opt t {updater.expected_information_gain(exp_before)}.")
         # print(f"Inf gain after opt {updater.expected_information_gain(exp_after)}.")

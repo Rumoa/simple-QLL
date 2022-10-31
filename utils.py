@@ -14,3 +14,7 @@ def generate_true_values(n=1, seed=1, filename=None):
 
 def load_true_values(filename=None):
     return list(np.load(filename))
+
+
+
+    

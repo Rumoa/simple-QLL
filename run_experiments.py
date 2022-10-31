@@ -32,7 +32,7 @@ filenames = [
 ]
 
 
-with open("mydata.json") as final:
+with open("mydata_2.json") as final:
     settings = json.load(final)
 
 # result_dictionary = [
