@@ -1,0 +1,15 @@
+[
+    {
+        "n_shots": 100,
+        "n_repeat": 3,
+        "no_particles": 100,
+        "SMC_fun": "default"
+    },
+    {
+        "n_shots": 100,
+        "n_repeat": 3,
+        "no_particles": 100,
+        "SMC_fun": "slower",
+        "update_rate": 0.4
+    }
+]

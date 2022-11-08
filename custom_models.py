@@ -91,6 +91,8 @@ class simple_precession_with_noise(FiniteOutcomeModel):
     #
     #
 
+    def create_H0(self, omega):
+        return 2*np.pi*omega*qu.sigmax()
     @classmethod
     def single_qu_likelihood(cls, par_config):
         final_t = par_config[0]

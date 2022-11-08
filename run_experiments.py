@@ -20,7 +20,7 @@ print(multiprocessing.cpu_count())
 # number_of_shots = 1000
 # n_repeat = 5
 
-true_values_list = utils.load_true_values("datasets/true_values_1.npy")
+true_values_list = utils.load_true_values("datasets/true_values_2.npy")
 number_of_cases = len(true_values_list)
 
 date = datetime.today().strftime("%Y-%m-%d_%H.%M")
@@ -32,7 +32,7 @@ filenames = [
 ]
 
 
-with open("mydata.json") as final:
+with open("testing_fisher_inf_matrix.json") as final:
     settings = json.load(final)
 
 # result_dictionary = [

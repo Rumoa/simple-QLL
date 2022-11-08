@@ -7,6 +7,8 @@ import sys
 from custom_models import simple_precession_with_noise
 import joblib
 
+from derivatives import expected_fisher_inf_matrix
+
 import h5py
 
 from optimization import *
@@ -14,6 +16,13 @@ from optimization import *
 from sklearn.metrics import mean_squared_error
 
 from custom_updater import adaptive_SMC
+
+
+psi0 = qu.basis(2, 0)
+rho0 = qu.ket2dm(psi0)
+
+projs = [np.array([[1, 0], [0, 0]]), np.array([[0, 0], [0, 1]])]
+
 
 
 def MSE(a, b, sum_over_params=True):
@@ -82,7 +91,7 @@ def run_case(
 ):
 
     model = simple_precession_with_noise()
-    prior = qi.UniformDistribution([[0, 0], [0, 0.5]])
+    prior = qi.UniformDistribution([[0, 0], [0.2, 0.4]])
     no_particles = no_particles
     if SMC_fun == "default":
         updater = qi.SMCUpdater(model, no_particles, prior)
@@ -94,7 +103,7 @@ def run_case(
     iter_array = np.arange(1, n_shots + 1, 1)
     for i in range(n_shots):
         guess = generate_guesses()
-        optimized_exp = optimize(guess, objective_fun_var_t, model, updater)
+        optimized_exp = optimize(guess, expected_fisher_inf_matrix,  updater, projectors=projs, rho0=rho0, bare_jump_op=qu.sigmax())
 
         experiment = optimized_exp["x"]
 
@@ -107,7 +116,7 @@ def run_case(
         # print(f"Inf gain non-opt t {updater.expected_information_gain(exp_before)}.")
         # print(f"Inf gain after opt {updater.expected_information_gain(exp_after)}.")
         #
-        # print(f"Experimental time {experiment}")
+        print(f"Experimental time {experiment}")
 
         datum = model.simulate_experiment(true_values, experiment)
         updater.update(datum, experiment)
