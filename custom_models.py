@@ -2,11 +2,14 @@ import qutip as qu
 import numpy as np
 from qinfer import FiniteOutcomeModel
 import itertools
-import solve_lindblad
+
+from dask import delayed
+
+# import solve_lindblad
 
 from evolution import evolve_dm, compute_probability, Z_projs
 
-from scipy.linalg import expm
+# from scipy.linalg import expm
 
 
 class SimplePrecessionWithNoise(FiniteOutcomeModel):
@@ -26,7 +29,9 @@ class SimplePrecessionWithNoise(FiniteOutcomeModel):
         return 2
 
     def are_models_valid(self, modelparams):
-        return np.all(np.logical_and(modelparams > 0, modelparams <= 1), axis=1)
+        return np.all(
+            np.logical_and(modelparams > 0, modelparams <= 1), axis=1
+        )
 
     @property
     def is_n_outcomes_constant(self):
@@ -48,9 +53,12 @@ class SimplePrecessionWithNoise(FiniteOutcomeModel):
             outcomes, modelparams, expparams
         )
 
-        all_possible_exps = list(itertools.product(expparams["t"], modelparams))
+        all_possible_exps = list(
+            itertools.product(expparams["t"], modelparams)
+        )
 
         aux = qu.parallel_map(self.single_qu_likelihood, all_possible_exps)
+        # aux = self.parallel_evolve_exps(all_possible_exps)
 
         splitted = np.split(np.array(aux), len(expparams))
 
@@ -68,7 +76,9 @@ class SimplePrecessionWithNoise(FiniteOutcomeModel):
         gamma = par_config[1][1]
         H0 = omega * self.UnitH0
 
-        final_dm = evolve_dm(self.SuperRho0, H0, [gamma * self.UnitJumpOp], final_t)
+        final_dm = evolve_dm(
+            self.SuperRho0, H0, [gamma * self.UnitJumpOp], final_t
+        )
 
         probs = compute_probability(final_dm.full(), self.MeasurementProjs)
 

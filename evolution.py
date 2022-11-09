@@ -15,4 +15,5 @@ def evolve_dm(superRho0, H0, operators, t, no_qubits=1):
 def compute_probability(rho, projs):
     return np.abs(np.real([np.trace(proj_i @ rho) for proj_i in projs]))
 
+
 Z_projs = [np.array([[1, 0], [0, 0]]), np.array([[0, 0], [0, 1]])]
