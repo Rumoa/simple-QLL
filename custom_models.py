@@ -3,13 +3,8 @@ import numpy as np
 from qinfer import FiniteOutcomeModel
 import itertools
 
-from dask import delayed
-
-# import solve_lindblad
 
 from evolution import evolve_dm, compute_probability, Z_projs
-
-# from scipy.linalg import expm
 
 
 class SimplePrecessionWithNoise(FiniteOutcomeModel):
@@ -20,9 +15,6 @@ class SimplePrecessionWithNoise(FiniteOutcomeModel):
         self.UnitJumpOp = qu.sigmax()
         self.SuperRho0 = qu.to_super(self.Rho0)
         self.MeasurementProjs = Z_projs
-
-    # super(simple_precession_with_noise, self)
-    # self.expparams_dtype = [('ts', 'float', 1), ('other', 'np.array', 2)]
 
     @property
     def n_modelparams(self):
